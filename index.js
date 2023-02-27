@@ -1,5 +1,5 @@
 //import book from './modules/bookClass.js';
-import addbooks from './addbooks.js';
+import addBook from './modules/addbooks.js';
 class Book {
     constructor(title, author) {
       this.title = title;
