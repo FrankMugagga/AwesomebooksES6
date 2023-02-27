@@ -1,127 +1,62 @@
-/*class Book {
-    constructor(title,author) {
-        this.title = title;
-        this.author = author;
-    }
-}
-
-class BookManager {
-    constructor(){
-        this.books = this.getBooksFromLocalStorage();
-    }
-
-    addBook(book) {
-        this.books.push(book);
-        this.saveBooksToLocalStorage();
-    }
-
-    saveBooksToLocalStorage() {
-        localStorage.setItem('books', JSON.stringify(this.books));
-        this.displayBooks();
-    }
-
-    removeBook(index) {
-        this.books.splice(index,1);
-        this.saveBooksToLocalStorage();
-    }
-
-    getBooksFromLocalStorage(){
-        const booksString = localStorage.getItem('books');
-        return booksString ? JSON.parse(booksString) : [];
-    }
-
-    displayBooks() {
-        const booksList = document.getElementById('booksList');
-        booksList.innerHTML = '';
-        this.books.forEach((book, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-            <b>${book.title}</b> by ${book.author} <button onclick="bookManager.removeBook(${index})">Remove</button>
-            `;
-            booksList.appendChild(li);
-
-        });
-    }
-}
-
-const bookForm = document.getElementById('bookForm');
-const bookManager = new BookManager();
-
-bookForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-
-    const book = new Book(title, author);
-    bookManager.addBook(book);
-
-   
-    bookForm.reset();
-});
-
-bookManager.displayBooks();
-*/
 class Book {
-    constructor(title,author) {
-        this.title = title;
-        this.author = author;
-    }
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
 }
 
 class BookManager {
-    constructor() {
-        this.books = this.getBooksFromLocalStorage();
-    }
+  constructor() {
+    this.books = this.getBooksFromLocalStorage();
+  }
 
-    addBook(book) {
-        this.books.push(book);
-        this.saveBooksToLocalStorage();
-    }
+  addBook(book) {
+    this.books.push(book);
+    this.saveBooksToLocalStorage();
+  }
 
-    removeBook(index) {
-        this.books.splice(index,1);
-        this.saveBooksToLocalStorage();
-    }
+  removeBook(index) {
+    this.books.splice(index, 1);
+    this.saveBooksToLocalStorage();
+  }
 
-    getBooksFromLocalStorage() {
-        const booksString = localStorage.getItem('books');
-        return booksString ? JSON.parse(booksString) : [];
-    }
+  getBooksFromLocalStorage() {
+    const booksString = localStorage.getItem('books');
+    return booksString ? JSON.parse(booksString) : [];
+  }
 
-    saveBooksToLocalStorage() {
-        localStorage.setItem('books', JSON.stringify(this.books));
-        this.displayBooks();
-    }
+  saveBooksToLocalStorage() {
+    localStorage.setItem('books', JSON.stringify(this.books));
+    this.displayBooks();
+  }
 
-    displayBooks() {
-        const booksList = document.getElementById('booksList');
-        booksList.innerHTML = '';
+  displayBooks() {
+    const booksList = document.getElementById('booksList');
+    booksList.innerHTML = '';
 
-        this.books.forEach((book,index) =>{
-            const li = document.createElement('li');
-            li.innerHTML = `
-            <b>${book.title}</b> by ${book.author} <button onclick="bookManager.removeBook(${index})">Delete</button>
+    this.books.forEach((book, index) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <b>${book.title}</b> by ${book.author} <button onclick="bookManager.removeBook(${index})">Delete</button>
               
-            `;
-            booksList.appendChild(li);
-        });
-    }
+        `;
+      booksList.appendChild(li);
+    });
+  }
 }
 
 const bookForm = document.getElementById('bookForm');
 const bookManager = new BookManager();
 
 bookForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
+  e.preventDefault();
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
 
-    const book = new Book(title.value, author);
-    bookManager.addBook(book);
+  const book = new Book(title, author);
+  bookManager.addBook(book);
 
-    bookForm.reset();
+  bookForm.reset();
 });
 
 bookManager.displayBooks();
-
