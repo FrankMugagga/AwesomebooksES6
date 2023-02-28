@@ -1,12 +1,14 @@
 // import Book from './modules/bookClass.js';
 
-// import addBook from './modules/addbooks.js';
+//import { className } from "postcss-selector-parser";
+
+//import addBook from './modules/addbooks.js';
  class BookManager {
   constructor() {
     this.books = this.getBooksFromLocalStorage();
   }
 
-  addBook(book) {
+  addBook(book){
     this.books.push(book);
     this.saveBooksToLocalStorage();
   }
@@ -33,8 +35,9 @@
 
     this.books.forEach((book, index) => {
       const li = document.createElement('li');
-      li.innerHTML = `
-          <b>${book.title}</b> by ${book.author} <button onclick="bookManager.removeBook(${index})">Delete</button>
+      li.classList.add('list_class');
+          li.innerHTML = `
+          <ul class="list_ite"> <li>"${book.title}"</li> <li>by</li> <li>${book.author}</li> </ul> <button onclick="bookManager.removeBook(${index})">Delete</button>
                 
           `;
       booksList.appendChild(li);

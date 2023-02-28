@@ -1,4 +1,6 @@
-/* export default addBook = (book) => {
+addBook = (book) => {
   this.books.push(book);
   this.saveBooksToLocalStorage();
-} */
+} 
+
+export default addBook;
