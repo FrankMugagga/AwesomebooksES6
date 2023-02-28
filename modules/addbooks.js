@@ -1,4 +1,4 @@
 export default function addBook(book) {
-    this.books.push(book);
-    this.saveBooksToLocalStorage();
-  };
+  this.books.push(book);
+  this.saveBooksToLocalStorage();
+}
