@@ -3,7 +3,7 @@
 import Book from './modules/bookClass.js';
 import BookManager from './modules/bookManager.js';
 import { DateTime } from './modules/luxon.js';
-//import { addContact, addForm, addList } from './modules/navigation.js';
+import { addList } from './modules/navigation.js';
 
 const time = document.getElementById('date');
 time.innerHTML = DateTime.now();
@@ -32,9 +32,7 @@ const formSection = document.getElementById('form_cont');
 const listSection = document.getElementById('list_setion');
 const contact_section = document.getElementById('contact_section');
 
-list.addEventListener('click', () => {
-  
-
+list.addEventListener('click', () => {  
   formSection.style.display = 'none';
   contact_section.style.display = 'none';
   listSection.style.display = 'block';
