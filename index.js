@@ -1,22 +1,22 @@
-//import book from './modules/bookClass.js';
+// import book from './modules/bookClass.js';
 import addBook from './modules/addbooks.js';
+
 class Book {
-    constructor(title, author) {
-      this.title = title;
-      this.author = author;
-    }
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
+}
 
 class BookManager {
   constructor() {
     this.books = this.getBooksFromLocalStorage();
   }
 
-
- /* addBook(book) {
+  /* addBook(book) {
     this.books.push(book);
     this.saveBooksToLocalStorage();
-  }*/
+  } */
 
   removeBook(index) {
     this.books.splice(index, 1);
@@ -24,7 +24,8 @@ class BookManager {
   }
 
   getBooksFromLocalStorage() {
-    const booksString = localStorage.getItem('books');
+    this.booksString = localStorage.getItem('books');
+    /*const booksString = localStorage.getItem('books');*/
     return booksString ? JSON.parse(booksString) : [];
   }
 
