@@ -1,9 +1,4 @@
-export default function addBook(book) {
+/* export default addBook = (book) => {
   this.books.push(book);
   this.saveBooksToLocalStorage();
-}
-
-export default addBook() => {
-  this.books.push(book);
-  this.saveBooksToLocalStorage();  
-}
+} */
