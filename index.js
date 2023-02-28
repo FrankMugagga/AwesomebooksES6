@@ -3,7 +3,6 @@
 import Book from './modules/bookClass.js';
 import BookManager from './modules/bookManager.js';
 import { DateTime } from './modules/luxon.js';
-import { addList } from './modules/navigation.js';
 
 const time = document.getElementById('date');
 time.innerHTML = DateTime.now();
@@ -19,7 +18,6 @@ bookForm.addEventListener('submit', (e) => {
 
   const book = new Book(title, author);
   bookManager.addBook(book);
-
   bookForm.reset();
 });
 
@@ -30,11 +28,11 @@ const contact1 = document.getElementById('contact');
 
 const formSection = document.getElementById('form_cont');
 const listSection = document.getElementById('list_setion');
-const contact_section = document.getElementById('contact_section');
+const contactSection = document.getElementById('contact_section');
 
-list.addEventListener('click', () => {  
+list.addEventListener('click', () => {
   formSection.style.display = 'none';
-  contact_section.style.display = 'none';
+  contactSection.style.display = 'none';
   listSection.style.display = 'block';
   list.style.color = 'blue';
   addBook1.style.color = 'black';
@@ -43,7 +41,7 @@ list.addEventListener('click', () => {
 
 addBook1.addEventListener('click', () => {
   formSection.style.display = 'flex';
-  contact_section.style.display = 'none';
+  contactSection.style.display = 'none';
   listSection.style.display = 'none';
   list.style.color = 'black';
   addBook1.style.color = 'blue';
@@ -52,11 +50,9 @@ addBook1.addEventListener('click', () => {
 
 contact1.addEventListener('click', () => {
   formSection.style.display = 'none';
-  contact_section.style.display = 'flex';
+  contactSection.style.display = 'flex';
   listSection.style.display = 'none';
   list.style.color = 'black';
   addBook1.style.color = 'black';
   contact1.style.color = 'blue';
-  
 });
-
