@@ -1,4 +1,105 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 20px;
+}
+
+#contact_section,
+#form_cont,
+#header,
+.list_container {
+  display: flex; 
+
+}
+
+#header {
+  border: 2px solid black;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+#heading {
+  font-size: 20px;
+}
+
+.list_container{
+  list-style: none;
+  gap: 20px;
+}
+
+.list_item {
+  border-left: 2px solid black;
+  padding-left: 20px;
+}
+
+a{
+  text-decoration: none;
+}
+
+#form_cont {
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#bookForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 320px;  
+}
+
+.input {
+  width: 310px;
+}
+
+.button {
+  align-self:flex-end;
+}
+
+#booksList{
+  list-style: none;
+  border: 2px solid black;
+  padding-left: 5px;
+}
+
+.list_class {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid red;
+}
+
+.list_setion {
+  display: flex;
+  flex-direction: column;
+}
+
+.listhead {
+  align-self: center;
+}
+
+.list_ite {
+  display: flex;
+  /*justify-content: space-between;*/
+  gap: 20px;
+  border: 2px solid blue;
+  width: 300px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.list_ite li{
+  text-align: left;
+  border: 2px solid green;
+}
+
+#contact_section {
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid green;
+}
+
+.footer {
+  border: 2px solid black;
 }
