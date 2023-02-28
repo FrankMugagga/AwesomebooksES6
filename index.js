@@ -1,9 +1,8 @@
- /*eslint-disable max-classes-per-file */
+/* eslint-disable max-classes-per-file */
 
-//import Book from './modules/bookClass.js';
+import Book from './modules/bookClass.js';
 import BookManager from './modules/bookManager.js';
-//import addBook from './modules/addbooks.js';
-
+// import addBook from './modules/addbooks.js';
 
 /*
 class Book {
@@ -11,7 +10,7 @@ class Book {
     this.title = title;
     this.author = author;
   }
-}*/
+} */
 /*
 class BookManager {
   constructor() {
@@ -21,7 +20,7 @@ class BookManager {
    addBook(book) {
     this.books.push(book);
     this.saveBooksToLocalStorage();
-  } 
+  }
 
   removeBook(index) {
     this.books.splice(index, 1);
@@ -47,7 +46,7 @@ class BookManager {
       const li = document.createElement('li');
       li.innerHTML = `
         <b>${book.title}</b> by ${book.author} <button onclick="bookManager.removeBook(${index})">Delete</button>
-              
+
         `;
       booksList.appendChild(li);
     });
