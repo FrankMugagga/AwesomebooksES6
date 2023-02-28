@@ -1,4 +1,4 @@
-// import Book from './modules/bookClass.js';
+//import Book from './modules/bookClass.js';
 
 //import { className } from "postcss-selector-parser";
 
@@ -37,7 +37,7 @@
       const li = document.createElement('li');
       li.classList.add('list_class');
           li.innerHTML = `
-          <ul class="list_ite"> <li>"${book.title}"</li> <li>by</li> <li>${book.author}</li> </ul> <button onclick="bookManager.removeBook(${index})">Delete</button>
+          <section class="list_ite"> <div class="book_tit">"${book.title}"</div> <div class="by">by</div> <div class="book_aut">${book.author}</div> </section> <button onclick="bookManager.removeBook(${index})">Delete</button>
                 
           `;
       booksList.appendChild(li);
