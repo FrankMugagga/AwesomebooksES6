@@ -1,14 +1,9 @@
-//import Book from './modules/bookClass.js';
-
-//import { className } from "postcss-selector-parser";
-
-//import addBook from './modules/addbooks.js';
- class BookManager {
+class BookManager {
   constructor() {
     this.books = this.getBooksFromLocalStorage();
   }
 
-  addBook(book){
+  addBook(book) {
     this.books.push(book);
     this.saveBooksToLocalStorage();
   }
@@ -19,9 +14,9 @@
   }
 
   getBooksFromLocalStorage() {
-    /* this.booksString = localStorage.getItem('books'); */
-    const booksString = localStorage.getItem('books');
-    return booksString ? JSON.parse(booksString) : [];
+    this.booksString = localStorage.getItem('books');
+    //const booksString = localStorage.getItem('books'); 
+    return this.booksString ? JSON.parse(booksString) : [];
   }
 
   saveBooksToLocalStorage() {
