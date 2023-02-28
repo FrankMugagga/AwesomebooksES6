@@ -14,9 +14,9 @@ class BookManager {
   }
 
   getBooksFromLocalStorage() {
-    this.booksString = localStorage.getItem('books');
-    //const booksString = localStorage.getItem('books'); 
-    return this.booksString ? JSON.parse(booksString) : [];
+    //this.booksString = localStorage.getItem('books');
+    const booksString = localStorage.getItem('books'); 
+    return booksString ? JSON.parse(booksString) : [];
   }
 
   saveBooksToLocalStorage() {
@@ -32,9 +32,8 @@ class BookManager {
       const li = document.createElement('li');
       li.classList.add('list_class');
           li.innerHTML = `
-          <section class="list_ite"> <div class="book_tit">"${book.title}"</div> <div class="by">by</div> <div class="book_aut">${book.author}</div> </section> <button onclick="bookManager.removeBook(${index})">Delete</button>
-                
-          `;
+          
+          <section class="list_ite"> <div class="book_tit">"${book.title}"</div> <div class="by">by</div> <div class="book_aut">${book.author}</div> </section> <button onclick="bookManager.removeBook(${index})">Delete</button> `;
       booksList.appendChild(li);
     });
   }

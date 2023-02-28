@@ -1,5 +1,4 @@
 /* eslint-disable max-classes-per-file */
-
 import Book from './modules/bookClass.js';
 import BookManager from './modules/bookManager.js';
 import { DateTime } from './modules/luxon.js';
