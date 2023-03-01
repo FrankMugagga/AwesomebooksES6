@@ -17,7 +17,7 @@ export default class BookManager {
     this.saveBooks();
   }
 
-  saveBooks(){
+  saveBooks() {
     localStorage.setItem('books', JSON.stringify(this.books));
   }
-}  
+}
