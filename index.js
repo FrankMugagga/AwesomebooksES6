@@ -1,26 +1,37 @@
-/* eslint-disable max-classes-per-file */
-import Book from './modules/bookClass.js';
-import BookManager from './modules/bookManager.js';
+import { Book } from "./modules/book.js";
+import { BookManager } from "./modules/bookManager.js";
+import { displayBooks } from "./modules/displayBooks.js";
 import { DateTime } from './modules/luxon.js';
 
 const time = document.getElementById('date');
 time.innerHTML = DateTime.now();
 
-const bookForm = document.getElementById('bookForm');
+const bookForm = document.getElementById("bookForm");
+const booksList = document.getElementById("booksList");
 
 const bookManager = new BookManager();
 
-bookForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
+bookForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const titleInput = document.getElementById("title");
+  const authorInput = document.getElementById("author");
+
+  const title = titleInput.value;
+  const author = authorInput.value;
 
   const book = new Book(title, author);
   bookManager.addBook(book);
+
+  titleInput.value = "";
+  authorInput.value = "";
+
+  displayBooks(bookManager, booksList);
   bookForm.reset();
 });
 
-bookManager.displayBooks();
+displayBooks(bookManager, booksList);
+
 const list = document.getElementById('list');
 const addBook1 = document.getElementById('add_book');
 const contact1 = document.getElementById('contact');
@@ -55,3 +66,4 @@ contact1.addEventListener('click', () => {
   addBook1.style.color = 'black';
   contact1.style.color = 'blue';
 });
+
