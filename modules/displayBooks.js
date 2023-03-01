@@ -1,7 +1,7 @@
 export default function displayBooks(bookManager, booksList) {
   const books = bookManager.getBooks();
   booksList.innerHTML = '';
-    books.forEach((book, index) => {
+  books.forEach((book, index) => {
     const li = document.createElement('li');
     li.classList.add('listed');
     li.innerHTML = `<section class="list_ite"> <div class="book_tit">"${book.title}"</div> <div class="by">by</div> <div class="book_aut"> by ${book.author}</div> </section>`;
@@ -13,5 +13,5 @@ export default function displayBooks(bookManager, booksList) {
     });
     li.appendChild(deleteButton);
     booksList.appendChild(li);
-    });
-  }  
+  });
+}
