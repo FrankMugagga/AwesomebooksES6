@@ -1,10 +1,11 @@
 // eslint-disable-next-line import/extensions
 import Book from './modules/book.js';
-import BookManager from './modules/bookManager';
-
-import displayBooks from './modules/displayBooks';
-
-import { DateTime } from './modules/luxon';
+// eslint-disable-next-line import/extensions
+import BookManager from './modules/bookManager.js';
+// eslint-disable-next-line import/extensions
+import displayBooks from './modules/displayBooks.js';
+// eslint-disable-next-line import/extensions
+import { DateTime } from './modules/luxon.js';
 
 const time = document.getElementById('date');
 time.innerHTML = DateTime.now();
